@@ -8,14 +8,14 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="~/Criterio/Index">Criterio</a>
+            <a href="~/Evidencia/Index">Evidencia</a>
         </li>
         <li class="breadcrumb-item active">@(Model.evidencia_id > 0 ? Model.descripcion: "Nuevo Registro")</li>
 
     </ol>
 </nav>
 <div class="card">
-    <h5 class="card-header">Agregar / Editar Criterio</h5>
+    <h5 class="card-header">Agregar / Editar Evidencia</h5>
     <div class="card-body">
         @using (Html.BeginForm("Guardar", "Criterio", FormMethod.Post, new { id = "frm-criterio" }))
         {
