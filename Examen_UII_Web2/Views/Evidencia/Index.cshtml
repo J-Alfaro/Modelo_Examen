@@ -34,14 +34,14 @@
                 {
                 <tr>
                     <td>@(s.evidencia_id)</td>
-                    <td>@(s.semestre_id)</td>
-                    <td>@(s.modelo_id)</td>
+                    <td>@(s.Semestre.nombre_semestre)</td>
+                    <td>@(s.Modelo.nombre_modelo)</td>
                     <td>@(s.modelo_id)</td>
                     <td>@(s.archivo)</td>
                     <td>@(s.tamanio)</td>
                     <td>@(s.tipo)</td>
                     <td> <img src="~/Imagenes/im.png" height="40" width="40" /></td>
-                    <td>@(s.categoria_id)</td>
+                    <td>@(s.Categoria.nombre_categoria)</td>
 
                     <td style="align-content:center">
                         <a href="~/Control/Visualizar/@s.evidencia_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
