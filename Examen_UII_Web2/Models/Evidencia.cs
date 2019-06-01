@@ -54,7 +54,7 @@ namespace Examen_UII_Web2.Models
 
         public virtual Semestre Semestre { get; set; }
 
-        public virtual Categoria Categoria { get; set; }
+       
 
 
         public List<Evidencia> Listar()//Retorna una coleccion de registros
