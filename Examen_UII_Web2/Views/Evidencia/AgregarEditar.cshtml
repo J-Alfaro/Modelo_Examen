@@ -85,8 +85,8 @@
                     <div class="form-group">
                         @Html.Label("Estado:")
                         <br />
-                        @Html.RadioButtonFor(x => x.estado, "A")<span> Activo</span>
-                        @Html.RadioButtonFor(x => x.estado, "I")<span> Inactivo</span>
+                        @Html.RadioButtonFor(x => x.estado, "true")<span> Activo</span>
+                        @Html.RadioButtonFor(x => x.estado, "false")<span> Inactivo</span>
                         @Html.ValidationMessageFor(x => x.estado, null, new { @class = "label label-danger" })
                     </div>
                 </div>
