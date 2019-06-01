@@ -6,6 +6,10 @@ namespace Examen_UII_Web2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+
+    using System.Linq;
+    using System.Data.Entity;
+
     [Table("Evidencia")]
     public partial class Evidencia
     {
@@ -47,5 +51,92 @@ namespace Examen_UII_Web2.Models
         public virtual Modelo Modelo { get; set; }
 
         public virtual Semestre Semestre { get; set; }
+
+
+        public List<Evidencia> Listar()//Retorna una coleccion de registros
+        {
+            var objEvidencia = new List<Evidencia>();
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    objEvidencia = db.Evidencia.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objEvidencia;
+        }
+
+        //metodo obtener
+        public Evidencia Obtener(int id)//retorna solo un objeto
+        {
+            var objEvidencia = new Evidencia();
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    objEvidencia = db.Evidencia
+                        .Where(x => x.evidencia_id == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objEvidencia;
+        }
+
+        //metodo guardar
+        public void Guardar()//retorna solo un objeto
+        {
+
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    if (this.evidencia_id > 0)
+                    {
+                        //si existe un valor mayor a 0 es porque existe un registro
+                        db.Entry(this).State = EntityState.Modified;
+
+                    }
+                    else
+                    {
+                        //si no existe registro graba(nuevo registro)
+                        db.Entry(this).State = EntityState.Added;
+
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        //metodo Eliminar
+        public void Eliminar()
+        {
+
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    db.Entry(this).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
     }
 }
