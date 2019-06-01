@@ -160,7 +160,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CriterioController.cs" />
+    <Compile Include="Controllers\EvidenciaController.cs" />
+    <Compile Include="Controllers\ModeloController.cs" />
+    <Compile Include="Controllers\SemestreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,6 +186,16 @@
     <Content Include="Views\Criterio\Index.cshtml" />
     <Content Include="Views\Criterio\Visualizar.cshtml" />
     <Content Include="Views\Criterio\AgregarEditar.cshtml" />
+    <Content Include="Views\Categoria\AgregarEditar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Evidencia\AgregarEditar.cshtml" />
+    <Content Include="Views\Evidencia\Index.cshtml" />
+    <Content Include="Views\Modelo\AgregarEditar.cshtml" />
+    <Content Include="Views\Modelo\Index.cshtml" />
+    <Content Include="Views\Modelo\Visualizar.cshtml" />
+    <Content Include="Views\Semestre\AgregarEditar.cshtml" />
+    <Content Include="Views\Semestre\Index.cshtml" />
+    <Content Include="Views\Semestre\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
