@@ -12,12 +12,21 @@ namespace Examen_UII_Web2.Models
     [Table("Categoria")]
     public partial class Categoria
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Categoria()
+        {
+            Evidencia = new HashSet<Evidencia>();
+        }
+
         [Key]
         public int categoria_id { get; set; }
 
         [Required]
         [StringLength(250)]
         public string nombre_categoria { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Evidencia> Evidencia { get; set; }
 
         //Metodo Listar
         public List<Categoria> Listar()

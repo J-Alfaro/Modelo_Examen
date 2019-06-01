@@ -5,6 +5,7 @@ namespace Examen_UII_Web2.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+
     using System.Linq;
     using System.Data.Entity;
 
@@ -30,6 +31,7 @@ namespace Examen_UII_Web2.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Evidencia> Evidencia { get; set; }
+
 
         //Metodo Listar
         public List<Semestre> Listar()

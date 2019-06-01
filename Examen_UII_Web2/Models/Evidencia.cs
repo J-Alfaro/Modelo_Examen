@@ -45,6 +45,8 @@ namespace Examen_UII_Web2.Models
 
         public bool? estado { get; set; }
 
+        public virtual Categoria Categoria { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleEvidencia> DetalleEvidencia { get; set; }
 
@@ -62,7 +64,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    objEvidencia = db.Evidencia.ToList();
+                    objEvidencia = db.Evidencia.Include("Modelo").Include("Semestre").Include("Categoria").ToList();
                 }
             }
             catch (Exception ex)
@@ -80,7 +82,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    objEvidencia = db.Evidencia
+                    objEvidencia = db.Evidencia.Include("Modelo").Include("Semestre").Include("Categoria")
                         .Where(x => x.evidencia_id == id)
                         .SingleOrDefault();
                 }
