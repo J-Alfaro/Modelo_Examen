@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Examen_UII_Web2.Models;
+using System.IO;
 
 namespace Examen_UII_Web2.Controllers
 {
@@ -40,16 +41,27 @@ namespace Examen_UII_Web2.Controllers
         }
 
         //accion Guardar
-        public ActionResult Guardar(Evidencia objEvidencia)
+        public ActionResult Guardar(Evidencia objEvidencia, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+
+                if (file != null)
+                {
+                    string archivo = (file.FileName).ToLower();
+
+                    file.SaveAs(Server.MapPath("~/Imagenes/" + file.FileName));
+
+                    objEvidencia.archivo = file.FileName;
+                    objEvidencia.tamanio = Convert.ToString(Math.Round((Convert.ToDecimal(file.ContentLength) / (1024 * 1024)), 2)) + " Mb";
+                    objEvidencia.tipo = Path.GetExtension(file.FileName);
+                }
                 objEvidencia.Guardar();
-                return Redirect("~/Modelo");
+                return Redirect("~/Evidencia");
             }
             else
             {
-                return View("~/Views/Modelo/AgregarEditar.cshtml");
+                return View("~/Views/Evidencia/AgregarEditar.cshtml");
             }
         }
 
@@ -58,7 +70,7 @@ namespace Examen_UII_Web2.Controllers
         {
             objEvidencia.modelo_id = id;
             objEvidencia.Eliminar();
-            return Redirect("~/Modelo");
+            return Redirect("~/Evidencia");
         }
     }
 }
