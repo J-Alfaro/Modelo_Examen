@@ -156,6 +156,7 @@
     <Content Include="assets\login\login.svg" />
     <Content Include="assets\login\logo_login.png" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\textLayout_2.0.0.232.swf" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Imagenes\Informe de Data Center_ Unidad II.docx" />
+    <Content Include="Imagenes\Propiedad Intelectual y NTICS.docx" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
