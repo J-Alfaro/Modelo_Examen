@@ -163,6 +163,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\CriterioController.cs" />
+    <Compile Include="Controllers\EvidenciaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="Controllers\SemestreController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +193,11 @@
     <Content Include="Views\Semestre\AgregarEditar.cshtml" />
     <Content Include="Views\Semestre\Index.cshtml" />
     <Content Include="Views\Semestre\Visualizar.cshtml" />
+    <Content Include="Views\Criterio\AgregarEditar.cshtml" />
+    <Content Include="Views\Criterio\Index.cshtml" />
+    <Content Include="Views\Criterio\Visualizar.cshtml" />
+    <Content Include="Views\Evidencia\AgregarEditar.cshtml" />
+    <Content Include="Views\Evidencia\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
