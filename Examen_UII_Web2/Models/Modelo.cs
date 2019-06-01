@@ -27,6 +27,9 @@ namespace Examen_UII_Web2.Models
         [StringLength(255)]
         public string nombre_modelo { get; set; }
 
+        [StringLength(255)]
+        public string descripcion { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Criterio> Criterio { get; set; }
 
