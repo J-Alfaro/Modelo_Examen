@@ -3,6 +3,7 @@
     List<Examen_UII_Web2.Models.Semestre> semestre = ViewBag.Semestre;
     List<Examen_UII_Web2.Models.Modelo> modelo = ViewBag.Modelo;
     List<Examen_UII_Web2.Models.Categoria> categoria = ViewBag.Categoria;
+    List<Examen_UII_Web2.Models.Criterio> criterio = ViewBag.criterio;
 }
 
 <nav aria-label="breadcrumb">
@@ -17,7 +18,7 @@
 <div class="card">
     <h5 class="card-header">Agregar / Editar Evidencia</h5>
     <div class="card-body">
-        @using (Html.BeginForm("Guardar", "Criterio", FormMethod.Post, new { id = "frm-criterio" }))
+        @using (Html.BeginForm("Guardar", "Evidencia", FormMethod.Post, new { id = "frm-criterio", enctype = "multipart/form-data" }))
         {
             @Html.HiddenFor(x => x.evidencia_id)
             <div class="panel panel-default">
@@ -30,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         @Html.Label("Semestre:")
-                        <select name="modelo_id" class="form-control">
+                        <select name="semestre_id" class="form-control">
                             <option @(Model.semestre_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
                             @foreach (var p in semestre)
                             {
@@ -71,7 +72,7 @@
 
                     <div class="form-group">
                         @Html.Label("Categoria:")
-                        <select name="modelo_id" class="form-control">
+                        <select name="categoria_id" class="form-control">
                             <option @(Model.categoria_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
                             @foreach (var p in categoria)
                             {
@@ -80,20 +81,31 @@
                         </select>
                         @Html.ValidationMessageFor(x => x.categoria_id, null, new { @class = "label label-danger" })
                     </div>
+                    <div class="form-group">
+                        @Html.Label("Criterio:")
+                        <br />
+                            @foreach (var p in criterio)
+                            {
+                                <input type="checkbox" name="chek" value="@p.criterio_id">@p.nombre_criterio <br />
+                            }
+                       
+                        @Html.ValidationMessageFor(x => x.categoria_id, null, new { @class = "label label-danger" })
+                    </div>
+
 
 
                     <div class="form-group">
                         @Html.Label("Estado:")
                         <br />
-                        @Html.RadioButtonFor(x => x.estado, "A")<span> Activo</span>
-                        @Html.RadioButtonFor(x => x.estado, "I")<span> Inactivo</span>
+                        @Html.RadioButtonFor(x => x.estado, true)<span> Activo</span>
+                        @Html.RadioButtonFor(x => x.estado, false)<span> Inactivo</span>
                         @Html.ValidationMessageFor(x => x.estado, null, new { @class = "label label-danger" })
                     </div>
                 </div>
             </div>
             <div class="text-right">
                 <button type="submit" class="btn btn-primary">Grabar</button>
-                <a href="~/Criterio" class="btn btn-danger">Cancelar</a>
+                <a href="~/Evidencia" class="btn btn-danger">Cancelar</a>
             </div>
         }
     </div>

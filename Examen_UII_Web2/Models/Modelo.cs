@@ -40,7 +40,6 @@ namespace Examen_UII_Web2.Models
         public virtual ICollection<Evidencia> Evidencia { get; set; }
 
 
-
         //metodo listar
         public List<Modelo> Listar()//Retorna una coleccion de registros
         {

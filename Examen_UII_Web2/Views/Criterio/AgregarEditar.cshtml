@@ -1,7 +1,6 @@
 ﻿@model Examen_UII_Web2.Models.Criterio
 @{
     ViewBag.Title = "AgregarEditar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 
     List<Examen_UII_Web2.Models.Modelo> modelo = ViewBag.Modelo;
 }
@@ -30,7 +29,7 @@
                     <option @(Model.modelo_id.Equals("") ? "selected" : "") value="">-Seleccione-</option>
                     @foreach (var p in modelo)
                     {
-                        <option @(Model.modelo_id.Equals(p.modelo_id) ? "selected" : "") value="@p.modelo_id">---</option>
+                        <option @(Model.modelo_id.Equals(p.modelo_id) ? "selected" : "") value="@p.modelo_id">@p.nombre_modelo</option>
                     }
                 </select>
                 @Html.ValidationMessageFor(x => x.modelo_id, null, new { @class = "label label-danger" })

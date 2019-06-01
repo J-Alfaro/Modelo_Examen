@@ -5,6 +5,8 @@ namespace Examen_UII_Web2.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
+    using System.Data.Entity;
 
     [Table("DetalleEvidencia")]
     public partial class DetalleEvidencia

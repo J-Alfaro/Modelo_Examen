@@ -45,12 +45,16 @@ namespace Examen_UII_Web2.Models
 
         public bool? estado { get; set; }
 
+        public virtual Categoria Categoria { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleEvidencia> DetalleEvidencia { get; set; }
 
         public virtual Modelo Modelo { get; set; }
 
         public virtual Semestre Semestre { get; set; }
+
+       
 
 
         public List<Evidencia> Listar()//Retorna una coleccion de registros
@@ -60,7 +64,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    objEvidencia = db.Evidencia.ToList();
+                    objEvidencia = db.Evidencia.Include("Modelo").Include("Semestre").Include("Categoria").ToList();
                 }
             }
             catch (Exception ex)
@@ -78,7 +82,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    objEvidencia = db.Evidencia
+                    objEvidencia = db.Evidencia.Include("Modelo").Include("Semestre").Include("Categoria")
                         .Where(x => x.evidencia_id == id)
                         .SingleOrDefault();
                 }
@@ -101,13 +105,13 @@ namespace Examen_UII_Web2.Models
                     if (this.evidencia_id > 0)
                     {
                         //si existe un valor mayor a 0 es porque existe un registro
-                        db.Entry(this).State = EntityState.Modified;
+                        db.Entry(this).State = System.Data.Entity.EntityState.Modified;
 
                     }
                     else
                     {
                         //si no existe registro graba(nuevo registro)
-                        db.Entry(this).State = EntityState.Added;
+                        db.Entry(this).State = System.Data.Entity.EntityState.Added;
 
                     }
                     db.SaveChanges();
@@ -128,7 +132,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    db.Entry(this).State = EntityState.Deleted;
+                    db.Entry(this).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
                 }
             }
