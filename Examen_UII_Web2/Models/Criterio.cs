@@ -40,7 +40,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    objModelo = db.Criterio.ToList();
+                    objModelo = db.Criterio.Include("Modelo").ToList();
                 }
             }
             catch (Exception ex)
@@ -58,7 +58,7 @@ namespace Examen_UII_Web2.Models
             {
                 using (var db = new Model_Sistema())
                 {
-                    objCriterio = db.Criterio
+                    objCriterio = db.Criterio.Include("Modelo")
                         .Where(x => x.criterio_id == id)
                         .SingleOrDefault();
                 }
