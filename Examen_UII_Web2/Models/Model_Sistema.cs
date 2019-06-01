@@ -25,6 +25,11 @@ namespace Examen_UII_Web2.Models
                 .Property(e => e.nombre_categoria)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Categoria>()
+                .HasMany(e => e.Evidencia)
+                .WithRequired(e => e.Categoria)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Criterio>()
                 .Property(e => e.nombre_criterio)
                 .IsUnicode(false);
@@ -61,6 +66,10 @@ namespace Examen_UII_Web2.Models
 
             modelBuilder.Entity<Modelo>()
                 .Property(e => e.nombre_modelo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Modelo>()
+                .Property(e => e.descripcion)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Modelo>()
