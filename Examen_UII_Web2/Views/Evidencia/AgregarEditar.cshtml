@@ -17,7 +17,7 @@
 <div class="card">
     <h5 class="card-header">Agregar / Editar Evidencia</h5>
     <div class="card-body">
-        @using (Html.BeginForm("Guardar", "Criterio", FormMethod.Post, new { id = "frm-criterio" }))
+        @using (Html.BeginForm("Guardar", "Evidencia", FormMethod.Post, new { id = "frm-evidencia", enctype = "multipart/form-data" }))
         {
             @Html.HiddenFor(x => x.evidencia_id)
             <div class="panel panel-default">
