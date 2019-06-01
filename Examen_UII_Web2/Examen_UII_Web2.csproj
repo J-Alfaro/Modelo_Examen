@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="Controllers\SemestreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +183,9 @@
     <Content Include="Views\Semestre\Index.cshtml" />
     <Content Include="Views\Semestre\Visualizar.cshtml" />
     <Content Include="Views\Semestre\AgregarEditar.cshtml" />
+    <Content Include="Views\Modelo\AgregarEditar.cshtml" />
+    <Content Include="Views\Modelo\Index.cshtml" />
+    <Content Include="Views\Modelo\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
