@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,6 +96,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap-grid.css" />
+    <Content Include="assets\css\bootstrap-grid.min.css" />
+    <Content Include="assets\css\bootstrap-reboot.css" />
+    <Content Include="assets\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\DataTables\bootstrap.min.css" />
+    <Content Include="assets\DataTables\dashboard.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="assets\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\DataTables\datatables.css" />
+    <Content Include="assets\DataTables\datatables.js" />
+    <Content Include="assets\DataTables\datatables.min.css" />
+    <Content Include="assets\DataTables\datatables.min.js" />
+    <Content Include="assets\DataTables\jquery.dataTables.min.js" />
+    <Content Include="assets\DataTables\jquery.min.js" />
+    <Content Include="assets\DataTables\popper.js" />
+    <Content Include="assets\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\ini.js" />
+    <Content Include="assets\js\jquery-3.3.0.min.js" />
+    <Content Include="assets\js\jquery.form.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="assets\login\estilo_login.css" />
+    <Content Include="assets\login\login.js" />
+    <Content Include="assets\login\login.svg" />
+    <Content Include="assets\login\logo_login.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -96,11 +163,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Criterio.cs" />
+    <Compile Include="Models\DetalleEvidencia.cs" />
+    <Compile Include="Models\Evidencia.cs" />
+    <Compile Include="Models\Modelo.cs" />
+    <Compile Include="Models\Model_Sistema.cs" />
+    <Compile Include="Models\Semestre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,7 +188,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
