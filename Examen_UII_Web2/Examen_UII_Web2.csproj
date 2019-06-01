@@ -156,9 +156,7 @@
     <Content Include="assets\login\login.svg" />
     <Content Include="assets\login\logo_login.png" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -185,17 +183,17 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Modelo\Index.cshtml" />
-    <Content Include="Views\Modelo\AgregarEditar.cshtml" />
-    <Content Include="Views\Modelo\Visualizar.cshtml" />
-    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Criterio\Index.cshtml" />
+    <Content Include="Views\Criterio\Visualizar.cshtml" />
+    <Content Include="Views\Criterio\AgregarEditar.cshtml" />
     <Content Include="Views\Categoria\AgregarEditar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Modelo\AgregarEditar.cshtml" />
+    <Content Include="Views\Modelo\Index.cshtml" />
+    <Content Include="Views\Modelo\Visualizar.cshtml" />
     <Content Include="Views\Semestre\AgregarEditar.cshtml" />
     <Content Include="Views\Semestre\Index.cshtml" />
     <Content Include="Views\Semestre\Visualizar.cshtml" />
-    <Content Include="Views\Criterio\AgregarEditar.cshtml" />
-    <Content Include="Views\Criterio\Index.cshtml" />
-    <Content Include="Views\Criterio\Visualizar.cshtml" />
     <Content Include="Views\Evidencia\AgregarEditar.cshtml" />
     <Content Include="Views\Evidencia\Index.cshtml" />
     <None Include="Web.Debug.config">
