@@ -156,6 +156,7 @@
     <Content Include="assets\login\login.svg" />
     <Content Include="assets\login\logo_login.png" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\textLayout_2.0.0.232.swf" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Imagenes\Informe de Data Center_ Unidad II.docx" />
+    <Content Include="Imagenes\Propiedad Intelectual y NTICS.docx" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -188,14 +191,14 @@
     <Content Include="Views\Criterio\AgregarEditar.cshtml" />
     <Content Include="Views\Categoria\AgregarEditar.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Evidencia\AgregarEditar.cshtml" />
+    <Content Include="Views\Evidencia\Index.cshtml" />
     <Content Include="Views\Modelo\AgregarEditar.cshtml" />
     <Content Include="Views\Modelo\Index.cshtml" />
     <Content Include="Views\Modelo\Visualizar.cshtml" />
     <Content Include="Views\Semestre\AgregarEditar.cshtml" />
     <Content Include="Views\Semestre\Index.cshtml" />
     <Content Include="Views\Semestre\Visualizar.cshtml" />
-    <Content Include="Views\Evidencia\AgregarEditar.cshtml" />
-    <Content Include="Views\Evidencia\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,7 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imagenes\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
