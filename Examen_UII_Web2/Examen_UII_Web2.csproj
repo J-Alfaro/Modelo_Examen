@@ -156,7 +156,9 @@
     <Content Include="assets\login\login.svg" />
     <Content Include="assets\login\logo_login.png" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
