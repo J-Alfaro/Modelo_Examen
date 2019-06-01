@@ -15,6 +15,7 @@ namespace Examen_UII_Web2.Controllers
         private Semestre objSemestre = new Semestre();
         private Modelo objModelo = new Modelo();
         private Categoria objCategoria = new Categoria();
+        private Criterio objCriterio = new Criterio();
         // GET: Modelo
         public ActionResult Index()
         {
@@ -33,7 +34,9 @@ namespace Examen_UII_Web2.Controllers
             ViewBag.semestre = objSemestre.Listar();
             ViewBag.modelo= objModelo.Listar();
             ViewBag.categoria = objCategoria.Listar();
-            
+            ViewBag.criterio = objCriterio.Listar();
+
+
             return View(
                 id == 0 ? new Evidencia() // Agregar un nuevo objeto
                 : objEvidencia.Obtener(id)
