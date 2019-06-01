@@ -6,6 +6,9 @@ namespace Examen_UII_Web2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    using System.Linq;
+    using System.Data.Entity;
+
     [Table("Criterio")]
     public partial class Criterio
     {
@@ -28,5 +31,92 @@ namespace Examen_UII_Web2.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleEvidencia> DetalleEvidencia { get; set; }
+
+        //metodo listar
+        public List<Criterio> Listar()//Retorna una coleccion de registros
+        {
+            var objModelo = new List<Criterio>();
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    objModelo = db.Criterio.Include("Modelo").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objModelo;
+        }
+
+        //metodo obtener
+        public Criterio Obtener(int id)//retorna solo un objeto
+        {
+            var objCriterio = new Criterio();
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    objCriterio = db.Criterio.Include("Modelo")
+                        .Where(x => x.criterio_id == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objCriterio;
+        }
+
+        //metodo guardar
+        public void Guardar()//retorna solo un objeto
+        {
+
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    if (this.criterio_id > 0)
+                    {
+                        //si existe un valor mayor a 0 es porque existe un registro
+                        db.Entry(this).State = EntityState.Modified;
+
+                    }
+                    else
+                    {
+                        //si no existe registro graba(nuevo registro)
+                        db.Entry(this).State = EntityState.Added;
+
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        //metodo Eliminar
+        public void Eliminar()
+        {
+
+            try
+            {
+                using (var db = new Model_Sistema())
+                {
+                    db.Entry(this).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
     }
 }

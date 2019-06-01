@@ -156,14 +156,11 @@
     <Content Include="assets\login\login.svg" />
     <Content Include="assets\login\logo_login.png" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EvidenciaController.cs" />
-    <Compile Include="Controllers\ModeloController.cs" />
+    <Compile Include="Controllers\CriterioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,11 +179,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Modelo\Index.cshtml" />
-    <Content Include="Views\Modelo\AgregarEditar.cshtml" />
-    <Content Include="Views\Modelo\Visualizar.cshtml" />
-    <Content Include="Views\Evidencia\Index.cshtml" />
-    <Content Include="Views\Evidencia\AgregarEditar.cshtml" />
+    <Content Include="Views\Criterio\Index.cshtml" />
+    <Content Include="Views\Criterio\Visualizar.cshtml" />
+    <Content Include="Views\Criterio\AgregarEditar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
