@@ -3,6 +3,7 @@
     List<Examen_UII_Web2.Models.Semestre> semestre = ViewBag.Semestre;
     List<Examen_UII_Web2.Models.Modelo> modelo = ViewBag.Modelo;
     List<Examen_UII_Web2.Models.Categoria> categoria = ViewBag.Categoria;
+    List<Examen_UII_Web2.Models.Criterio> criterio = ViewBag.criterio;
 }
 
 <nav aria-label="breadcrumb">
@@ -80,6 +81,17 @@
                         </select>
                         @Html.ValidationMessageFor(x => x.categoria_id, null, new { @class = "label label-danger" })
                     </div>
+                    <div class="form-group">
+                        @Html.Label("Criterio:")
+                        <br />
+                            @foreach (var p in criterio)
+                            {
+                                <input type="checkbox" name="chek" value="@p.criterio_id">@p.nombre_criterio <br />
+                            }
+                       
+                        @Html.ValidationMessageFor(x => x.categoria_id, null, new { @class = "label label-danger" })
+                    </div>
+
 
 
                     <div class="form-group">
