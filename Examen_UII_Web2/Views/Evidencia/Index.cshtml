@@ -34,19 +34,40 @@
                 {
                 <tr>
                     <td>@(s.evidencia_id)</td>
-                    <td>@(s.semestre_id)</td>
-                    <td>@(s.modelo_id)</td>
+                    <td>@(s.Semestre.nombre_semestre)</td>
+                    <td>@(s.Modelo.nombre_modelo)</td>
                     <td>@(s.modelo_id)</td>
                     <td>@(s.archivo)</td>
                     <td>@(s.tamanio)</td>
                     <td>@(s.tipo)</td>
-                    <td> <img src="~/Imagenes/im.png" height="40" width="40" /></td>
-                    <td>@(s.categoria_id)</td>
+                    
+                    <td>
+                        @{ string tipoimagen = "desconocidoicono.png";}
+                        @if (s.tipo == ".docx")
+                        {
+                            tipoimagen = "wordicono.png";
+                        }
+                        @if (s.tipo == ".xls")
+                        {
+                            tipoimagen = "excelicono.png";
+                        }
+                        @if (s.tipo == ".pdf")
+                        {
+                            tipoimagen = "pdficono.png";
+                        }
+                        @if (s.tipo == ".png" || s.tipo == ".jpg" || s.tipo == ".png" || s.tipo == ".gif")
+                        {
+                            tipoimagen = "imagenicono.png";
+                        }
+                      
+                        <a href='@Url.Action(s.archivo, "Imagenes")'><img src="~/Imagenes/@tipoimagen" width="60" height="60" /></a>
+                    </td>
+                    <td>@(s.Categoria.nombre_categoria)</td>
 
                     <td style="align-content:center">
-                        <a href="~/Control/Visualizar/@s.evidencia_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
-                        <a href="~/Control/AgregarEditar/@s.evidencia_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
-                        <a href="~/Control/Eliminar/@s.evidencia_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
+                        <a href="~/Evidencia/Visualizar/@s.evidencia_id" class="btn btn-xs btn-warning btn-sm">Visualizar</a>
+                        <a href="~/Evidencia/AgregarEditar/@s.evidencia_id" class="btn btn-xs btn-primary btn-sm">Modificar</a>
+                        <a href="~/Evidencia/Eliminar/@s.evidencia_id" class="btn btn-xs btn-danger btn-sm" onclick="return confirm('¿Esta Seguro de Eliminar.........?');">Eliminar</a>
                     </td>
                 </tr>
                 }

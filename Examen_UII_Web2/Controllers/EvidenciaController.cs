@@ -75,5 +75,11 @@ namespace Examen_UII_Web2.Controllers
             objEvidencia.Eliminar();
             return Redirect("~/Evidencia");
         }
+
+        public FileResult Descargar(string ImageName)
+        {
+            var FileVirtualPath = "~/Imagenes/" + ImageName;
+            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
+        }
     }
 }
